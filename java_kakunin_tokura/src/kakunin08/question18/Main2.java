@@ -1,0 +1,12 @@
+package kakunin08.question18;
+
+/**
+ * 例外と例外処理
+ */
+public class Main2 {
+	public static void main(String[] args) throws Exception {
+
+		// 2
+
+	}
+}

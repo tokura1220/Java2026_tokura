@@ -9,9 +9,11 @@ public class Sample1301 {
 		// フィールドに値を代入
 		phone.fee = 5000;
 		phone.data = 2.0;
-
+		phone.iro = "黒";
+				
 		// フィールドの値を出力
 		System.out.println("料金は" + phone.fee + "円です。");
 		System.out.println("データ通信量は" + phone.data + "GBです。");
+		System.out.println("携帯の色は" + phone.iro + "です。");
 	}
 }

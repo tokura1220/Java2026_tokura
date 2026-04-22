@@ -9,4 +9,7 @@ public class Phone1301 {
 
     /** 携帯電話のデータ通信量 */
     double data;
+    String iro;
+
+	
 }
