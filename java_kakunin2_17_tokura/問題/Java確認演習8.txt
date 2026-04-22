@@ -1,0 +1,317 @@
+/////////////////////////////
+//     Java確認演習8
+//     例外と例外処理
+//   コレクションの操作
+/////////////////////////////
+
+※問題文中のプログラム要素の指定は以下のルールで記述している。
+
+＜クラス・インターフェースの表記＞
+ -----------------------------------------------------
+|  [アクセス修飾子]クラス名(またはインターフェース名) |
+|  例: +MyClass                                       |
+ -----------------------------------------------------
+※final、abstract修飾子や継承(実装)関係については別途補足
+
+＜フィールドの表記＞
+ -----------------------------------
+|  [アクセス修飾子]変数名:データ型  |
+|  例: -id:int                      |
+ -----------------------------------
+※static、final修飾子については別途補足
+
+＜メソッドの表記＞
+ -------------------------------------------------------------
+|  [アクセス修飾子]メソッド名(変数名:データ型...):戻り値の型  |
+|  例: +getId():int                                           |
+ -------------------------------------------------------------
+※static、final、abstract修飾子や発生しうる例外については別途補足
+
+＜アクセス修飾子の表記＞
+ ---------------------
+| public		|  +  |
+| protected		|  #  |
+| [なし]		|  ~  |
+| private		|  -  |
+ ---------------------
+
+
+
+問題① 例外と例外処理
+
+解答用ファイル: 
+  kakunin08.question18.Main1.java (実行クラス)
+  kakunin08.question18.Main2.java (実行クラス)
+  kakunin08.question18.Main3.java (実行クラス)
+  kakunin08.question18.Main4.java (実行クラス)
+  kakunin08.question18.Main5.java (実行クラス)
+  kakunin08.question18.CheckedException.java（未作成）
+  kakunin08.question18.UnCheckedException.java（未作成）
+  kakunin08.question18.A.java（未作成）
+  kakunin08.question18.B.java（未作成）
+  kakunin08.question18.C.java（未作成）
+テスト用コード：
+  kakunin08.question18.Question18Test.java
+
+
+1. 以下のコードを記述し、実行時に例外が発生することを確認しなさい。
+
+   ・実行クラスMain1のmainメソッド内に以下の処理を追加。
+
+      ・コマンドライン引数の長さが0なら、以下の処理を実行。
+         ・[引数がありません。]と表示。
+         ・return文を引数なしで実行。
+      ・コマンドライン引数の最初の要素に応じて分岐するswitch文を記述。
+         ・引数[1]の場合、以下を実行。
+            ・Integer型の変数[intVal]を宣言し、値[null]で初期化。
+            ・[intVal]をインクリメント。
+            ・break文を実行。
+         ・引数[2]の場合、以下を実行。
+            ・int配列型の変数[intArray]を宣言し、値[1]、[2]、[3]で初期化。
+            ・[intArray]の添字[3]の要素をインクリメント。
+
+   ※プログラムの実行方法
+      ・ファイル右クリック→実行→実行の構成
+      ・Main1を選択→引数タブ→プログラムの引数に実引数を記述→実行ボタン
+
+   【出力例】
+
+   ・引数がない場合
+   引数がありません。
+
+   ・引数[1]の場合
+   Exception in thread "main" java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because "intVal" is null
+	at kakunin08.question18.Main1.main(Main1.java:16)
+
+   ・引数[2]の場合
+   Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
+	at kakunin08.question18.Main1.main(Main1.java:20)
+
+
+2. 以下のコードを記述し、実行時に例外が発生することを確認しなさい。
+
+   ・実行クラスMain2のmainメソッド内に以下の処理を追加。
+
+      ・SimpleDateFormatクラスを引数[yyyy/MM/dd]で生成し、変数[sdf]に代入。
+      ・[sdf]のparseメソッドを引数[2026-04-99]で呼び出し、Date変数[date]に代入。 ※java.util.Date
+      ・[date]を表示。
+
+   【出力例】
+   Exception in thread "main" java.text.ParseException: Unparseable date: "2026-04-99"
+	at java.base/java.text.DateFormat.parse(DateFormat.java:399)
+	at kakunin08.question18.Main2.main(Main2.java:13)
+
+
+3. 以下のコードを記述し、実行時に例外が発生することを確認しなさい。
+
+   ・実行クラスMain3のmainメソッド内に以下の処理を追加。
+
+      ・int変数[a]を宣言し、値[1]で初期化。
+      ・int変数[b]を宣言し、値[2]で初期化。
+      ・try-catch-finally文のtryブロックで以下を実行。
+         ・[計算を行います。]と表示。
+         ・[b]と[a]の商を[a]と[b]の商で割った値を表示。
+      ・catchブロックで、ArithmeticException型の例外をキャッチし、
+        スタックトレースを表示。
+      ・finallyブロックで、[計算を終了します。]と表示。
+
+   【出力例】
+   計算を行います。
+   java.lang.ArithmeticException: / by zero
+    	at kakunin08.question18.Main3.main(Main3.java:13)
+   計算を終了します。
+
+
+4. 以下のコードを記述しなさい。
+
+   ・実行クラスMain4のmainメソッド内に以下の処理を追加。
+
+      ・try-catch文のtryブロックで以下を実行。
+         ・コマンドライン引数の長さが0なら、以下の処理を実行。
+            ・[引数がありません。]と表示。
+            ・return文を引数なしで実行。
+         ・コマンドライン引数の最初の要素に応じて分岐するswitch文を記述。
+            ・引数[1]の場合、以下を実行。
+               ・引数[非チェック例外が発生!]でRuntimeExceptionを生成しスロー。
+            ・引数[2]の場合、以下を実行。
+               ・引数[チェック例外が発生!]でExceptionを生成しスロー。
+      ・catchブロックで、RuntimeException型の例外をキャッチし、
+        例外メッセージのみを表示。
+      ・次のcatchブロックで、Exception型の例外をキャッチし、
+        例外メッセージのみを表示。
+
+   【出力例】
+
+   ・引数がない場合
+   引数がありません。
+
+   ・引数[1]の場合
+   非チェック例外が発生!
+
+   ・引数[2]の場合
+    チェック例外が発生!
+
+
+5. 以下のコードを記述しなさい。
+
+   ・以下の独自例外クラスを作成。
+
+       クラス1			+UnCheckedException		※RuntimeExceptionを継承
+       ※Eclipse機能で、親クラスの以下のコンストラクタのみオーバーロード
+       コンストラクタ1	+UnCheckedException(message:String) ※処理の追加はなし
+
+       クラス2			+CheckedException		※Exceptionを継承
+       ※Eclipse機能で、親クラスの以下のコンストラクタのみオーバーロード
+       コンストラクタ1	+CheckedException(message:String) ※処理の追加はなし
+
+   ・以下のクラスを作成。
+
+       クラス3			+C
+       メソッド1		~c():void		※staticメンバ
+         ・引数[【C】例外発生!]でUnCheckedExceptionを生成しスロー。
+
+       クラス4			+B
+       メソッド1		~b():void		※staticメンバ、CheckedExceptionの可能性あり
+         ・try-catch文のtryブロックで以下を実行。
+            ・クラス3のメソッド1をstatic呼び出し。
+         ・catchブロックで、UnCheckedException例外をキャッチし、以下を実行。
+            ・[【B】例外をキャッチ]と表示。
+            ・[【B】Aクラスに報告します!]と表示。
+            ・キャッチした例外の例外メッセージのみを以下の形式の引数として、
+              CheckedExceptionを生成しスロー。
+            
+              【B】「〇」だそうです!
+            
+       クラス5			+A
+       メソッド1		~a():void		※staticメンバ
+         ・try-catch文のtryブロックで以下を実行。
+            ・クラス4のメソッド1をstatic呼び出し。
+         ・catchブロックで、CheckedException例外をキャッチし、以下を実行。
+            ・[【A】例外をキャッチ]と表示。
+            ・例外メッセージのみを表示。
+            ・[【A】...静観しましょう。]と表示。
+
+   ・実行クラスMain5のmainメソッド内に以下の処理を追加。
+
+      ・クラス5のメソッド1をstatic呼び出し。
+
+   【出力例】
+   【B】例外をキャッチ
+   【B】Aクラスに報告します!
+   【A】例外をキャッチ
+   【B】「【C】例外発生!」だそうです!
+   【A】...静観しましょう。
+
+
+
+問題② コレクションの操作（リスト）
+
+解答用ファイル: 
+  kakunin08.Question19.java (実行クラス)
+テスト用コード：
+  kakunin08.Question19Test.java
+
+※繰り返し対象となる配列の初期化は、既にコード内に記述してある。
+※BufferedReaderの初期化は、既にコード内に記述してある。
+
+1. 実行クラスのmainメソッド内に以下のコードを記述しなさい。
+
+   ・総称型StringのList型変数[idList]を宣言し、ArrayListクラスを生成して代入。
+   ・総称型DoubleのList型変数[scoreList]を宣言し、ArrayListクラスを生成して代入。
+   ・[5人分のidを入力:]と表示。
+   ・try-catch文のtryブロックで以下を実行。
+      ・カウンタ変数[i]の値[0]～[5]未満の間、繰り返すfor文で以下の処理を実行。
+         ・コンソールから入力された文字列を[idList]に追加。
+         ・既存の配列[scoreArray]の添字[i]の要素を[scoreList]に追加。
+   ・catchブロックで、IOException型の例外をキャッチし、処理は何もしない。
+   ・System.out.println()で[idList]を表示。
+   ・System.out.println()で[scoreList]を表示。
+
+2. 実行クラスのmainメソッド内に以下のコードを記述しなさい。
+
+   ・カウンタ[i]の値[0]～[scoreList]の長さ未満の間、繰り返すfor文で以下の処理を実行。
+      ・添字[i]の要素を、添字[i]の要素の値+3の値で上書き。
+   ・[scoreList]を以下の形式で表示。
+   
+     加点後の得点〇
+   
+3. 実行クラスのmainメソッド内に以下のコードを記述しなさい。
+
+   ・カウンタ[i]の値が、[idList]-4～[0]以上の間、繰り返すfor文で以下の処理を実行。
+      ・[idList]の添字[i]の要素を削除。
+      ・[scoreList]の添字[i]の要素を削除。
+
+   ・カウンタ[i]の値が、[0]～[idList]の長さ未満の間、繰り返すfor文で以下の処理を実行。
+      ・[idList]、[scoreList]の添字[i]の要素を以下の形式で表示。
+   
+         (id) (得点)
+
+
+【1.～3.の出力例】
+5人分のidを入力:
+taro
+hanako
+haruo
+natsuko
+aki
+[taro, hanako, haruo, natsuko, aki]
+[65.5, 93.5, 46.0, 70.2, 88.0]
+加点後の得点[68.5, 96.5, 49.0, 73.2, 91.0]
+haruo 49.0
+natsuko 73.2
+aki 91.0
+
+
+
+問題③ コレクションの操作（マップ）
+
+解答用ファイル: 
+  kakunin08.Question20.java (実行クラス)
+テスト用コード：
+  kakunin08.Question20Test.java
+
+※繰り返し対象となる配列の初期化は、既にコード内に記述してある。
+
+
+1. 実行クラスのmainメソッド内に以下のコードを記述しなさい。
+
+   ・総称型String、DoubleのMap型変数[scoreMap]を宣言し、HashMapクラスを生成して代入。
+   ・カウンタ[i]の値が、[0]～[5]未満の間、繰り返すfor文で以下の処理を実行。
+      ・[scoreMap]に、以下のエントリを追加。
+         キー:既存の配列[idArray]の添字[i]の要素
+         値:既存の配列[scoreArray]の添字[i]の要素
+   ・System.out.println()で[scoreMap]を表示。
+
+2. 実行クラスのmainメソッド内に以下のコードを記述しなさい。
+
+   ・String型変数[key]を宣言し、値[aki]で初期化。
+   ・boolean型変数[isExist]を宣言し、引数[key]で[scoreMap]のcontainsKeyメソッドを
+     呼び出した戻り値で初期化。
+   ・[key]、[isExist]を活用し、以下の形式で表示。
+   
+      〇というidは存在します。
+        または
+      〇というidは存在しません。
+   
+   ・[key]、[scoreMap]のgetメソッドを活用し、以下の形式で表示。
+   
+      〇さんの得点は〇点です。
+   
+3. 実行クラスのmainメソッド内に以下のコードを記述しなさい。
+
+   ・総称型String、BooleanのMap型変数[isClearedMap]を宣言し、HashMapクラスを生成して代入。
+   ・拡張for文を使って、[scoreMap]のentrySetメソッドの戻り値の全要素に以下を実行。
+     各要素は総称型String、DoubleのMap.Entry型変数[e]に代入。
+      ・[isClearedMap]に、以下のエントリを追加。
+         キー:[e]のgetKeyメソッドの戻り値
+         値:[e]のgetValueメソッドの戻り値が[60]以上かどうか
+   ・System.out.println()で[isClearedMap]を表示。
+
+
+【1.～3.の出力例】
+{hanako=93.5, haruo=46.0, natsuko=70.2, taro=65.5, aki=88.0}
+akiというidは存在します。
+akiさんの得点は88.0点です。
+{hanako=true, haruo=false, natsuko=true, taro=true, aki=true}
+
+

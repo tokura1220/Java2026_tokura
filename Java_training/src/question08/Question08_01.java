@@ -5,6 +5,7 @@ public class Question08_01 {
 	public static void main(String[] args) {
 		int[] num;
 		num= new int[5];
+		System.out.println(num);
 
 		// TODO 自動生成されたメソッド・スタブ
 

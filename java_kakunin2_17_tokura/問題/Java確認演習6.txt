@@ -1,0 +1,235 @@
+///////////////////////////
+//    Java確認演習6
+//   クラスライブラリ
+//         継承
+///////////////////////////
+
+※問題文中のプログラム要素の指定は以下のルールで記述している。
+
+＜クラス・インターフェースの表記＞
+ -----------------------------------------------------
+|  [アクセス修飾子]クラス名(またはインターフェース名) |
+|  例: +MyClass                                       |
+ -----------------------------------------------------
+※final、abstract修飾子や継承(実装)関係については別途補足
+
+＜フィールドの表記＞
+ -----------------------------------
+|  [アクセス修飾子]変数名:データ型  |
+|  例: -id:int                      |
+ -----------------------------------
+※static、final修飾子については別途補足
+
+＜メソッドの表記＞
+ -------------------------------------------------------------
+|  [アクセス修飾子]メソッド名(変数名:データ型...):戻り値の型  |
+|  例: +getId():int                                           |
+ -------------------------------------------------------------
+※static、final、abstract修飾子や発生しうる例外については別途補足
+
+＜アクセス修飾子の表記＞
+ ---------------------
+| public		|  +  |
+| protected		|  #  |
+| [なし]		|  ~  |
+| private		|  -  |
+ ---------------------
+
+
+
+問題① クラスライブラリ
+
+解答用ファイル: 
+  kakunin06.question14.Main.java (実行クラス)
+  kakunin06.question14.Student.java（一部作成済）
+  kakunin06.question14.School.java（一部作成済）
+テスト用コード：
+  kakunin06.question14.Question14Test.java
+
+※繰り返し対象となる配列の初期化は、既にコード内に記述してある。
+
+1. 以下のコードを記述しなさい。
+
+   ・Studentクラスに以下を追加。
+
+       フィールド1(番号)	-num:int		初期値:なし
+       フィールド2(名前)	-name:String	初期値:なし
+       フィールド3(誕生日)	-birth:Date		初期値:なし ※java.utilパッケージのDateクラス
+       フィールド4(メール)	-mail:String	初期値:なし
+       フィールド5(点数)	-score:double	初期値:なし
+       ※Eclipseの機能を使って全フィールドを初期化するコンストラクタを作成。
+       ※Eclipseの機能を使って全フィールドのgetterとsetterを作成。
+
+   ・Schoolクラスに以下を追加。
+
+       メソッド2		+set(s:Student):void			※staticメンバ
+         ・SimpleDateFormatクラスを引数[yyyy/MM/dd]で生成し、変数[sdf]に代入。
+         ・lastIdxがstudentsの長さ未満なら以下を行う。
+            ・studentsのlastIdxの要素にsを代入。
+            ・lastIdx+1、およびフィールドの値を以下の形式で表示。
+            
+              席〇 (番号) (名前) (誕生日) (メール) (点数)
+            
+            ・lastIdxをインクリメント。
+
+   ・実行クラスでSchoolクラスのbuildメソッドを引数[既存配列numの長さ]で呼び出し。
+   ・SimpleDateFormatクラスを引数[yyyy/MM/dd]で生成し、変数[sdf]に代入。
+   ・既存配列[num]の要素の数だけ以下の処理を行う。
+      ・[sdf]のperseメソッドを引数[既存配列birthStrの同じ添字要素]で呼び出し、
+        Date型の変数[birth]に代入。
+      ・以下を引数にStudentを生成し、[s]に代入。
+         - 既存配列numの同じ添字要素
+         - 既存配列nameの同じ添字要素
+         - 変数[birth]
+         - 既存配列mailの同じ添字要素
+         - 既存配列scoreの同じ添字要素
+      ・Schoolクラスのsetメソッドを引数[s]で呼び出し。
+
+2. 以下のコードを記述しなさい。
+
+   ・Schoolクラスに以下を追加。
+
+       メソッド3		+listNames():void				※static
+         ・「---名前リスト---」と表示。
+         ・studentsの全要素に対して以下の処理を行う。
+         ・StudentクラスのgetMailメソッドの戻り値をString型の[m]に代入。
+         ・StringクラスのindexOfメソッドを引数[@]で呼び出し、
+           戻り値をint型の[i]に代入。
+         ・Stringクラスのsubstringメソッドを引数[0]、[i]で呼び出し、
+           戻り値をString型の[id]に代入。
+         ・StudentクラスのgetNameメソッドの戻り値、[id]の値を以下の形式で表示。
+            
+              名前(メールアドレスの@の手前の部分)		例: 太郎(taro)
+
+   ・実行クラスでSchoolクラスのlistNamesメソッドを呼び出し。
+
+3. 以下のコードを記述しなさい。
+
+   ・Schoolクラスに以下を追加。
+
+       メソッド4		+testReport():void				※static
+         ・「---テスト結果---」と表示。
+         ・double変数[first]をstudentsの先頭要素のgetScoreメソッドの戻り値で初期化。
+         ・double変数[max]を[first]で初期化。
+         ・double変数[min]を[first]で初期化。
+         ・double変数[min]を[first]で初期化。
+         ・studentsの全要素に対して以下の処理を行う。
+            ・double変数[cur]をstudentsの現在の要素のgetScoreメソッドの戻り値で初期化。
+            ・[max]にMathクラスのmaxメソッドを引数[max]、[cur]で呼び出した戻り値を代入。
+            ・[min]にMathクラスのminメソッドを引数[min]、[cur]で呼び出した戻り値を代入。
+            ・[sum]に[cur]を加算代入。
+         ・[max]、[sum]、[min]の値を以下の形式で表示。
+            
+             最高点:〇
+             平均点:〇
+             最低点:〇
+
+   ・実行クラスでSchoolクラスのtestReportメソッドを呼び出し。
+
+【1.～3.の出力例】
+【スクール開講】座席数:5
+席1 10 太郎 2004/08/10 taro@aa.jp 65.5
+席2 11 花子 2004/04/15 hana@bb.com 93.5
+席3 12 春男 2001/03/26 haru@cc.us 46.0
+席4 13 夏子 2004/08/10 natsu@dd.org 70.2
+席5 14 あき 2003/10/24 aki@ee.com 88.0
+---名前リスト---
+太郎(taro)
+花子(hana)
+春男(haru)
+夏子(natsu)
+あき(aki)
+---テスト結果---
+最高点:93.5
+平均点:72.6
+最低点:46.0
+
+
+
+問題② 継承
+
+解答用ファイル: 
+  kakunin06.question15.Main.java (実行クラス)
+  kakunin06.question15.Student.java（一部作成済）
+  kakunin06.question15.PartTimeWorker.java（未作成）
+  kakunin06.question15.BandMember.java（未作成）
+テスト用コード：
+  kakunin06.question15.Question15Test.java
+
+1. 以下のコードを記述しなさい。
+
+   ・Studentクラスに以下を追加。
+
+       フィールド1			+ORG_NAME:String	初期値:Java大学		※static final
+       フィールド2			#num:int			初期値:なし
+       フィールド3			#name:String		初期値:なし
+       フィールド4			-grade:int			初期値:なし
+       ※Eclipse機能でフィールド2、3を初期化するコンストラクタ作成。
+         同じコンストラクタ内で、フィールド4を値[1]で初期化。
+       ※Eclipse機能でフィールド4のgetter作成。
+       メソッド1			+selfIntroduction():void
+         ・全フィールドの値を以下の形式で表示。
+            
+            Java大学〇年、学籍番号〇、〇です。
+
+   ・実行クラスで引数[202601]、[田中]で生成し、Student型の変数[s1]に代入。
+   ・[s1]のselfIntroductionメソッドを呼び出し。
+
+2. 以下のコードを記述しなさい。
+
+   ・以下のクラスを作成。
+
+       クラス				+PartTimeWorker		※Studentを継承
+       フィールド1			-job:String			初期値:なし
+       ※Eclipse機能で全フィールド(親クラス含む)を初期化するコンストラクタ作成。
+       メソッド1			+selfIntroduction():void	※オーバーライド
+         ・フィールドORG_NAME、grade、num、nameの値を以下の形式で表示。
+            
+            Java大学〇年、学籍番号〇、〇です。
+
+         ・フィールドjobの値を以下の形式で表示。
+            
+            〇してます。
+
+   ・実行クラスで引数[202602]、[藤田]、[コンビニでバイト]で生成し、
+     Student型の変数[s2]に代入。
+   ・[s2]のselfIntroductionメソッドを呼び出し。
+
+3. 以下のコードを記述しなさい。
+
+   ・以下のクラスを作成。
+
+       クラス				+BandMember				※Studentを継承
+       フィールド1			-instrument:String		初期値:なし
+       ※Eclipse機能で全フィールド(親クラス含む)を初期化するコンストラクタ作成。
+       メソッド1			+selfIntroduction():void	※オーバーライド
+         ・親クラスのselfIntroductionメソッドを呼び出し。
+         ・フィールドinstrumentの値を以下の形式で表示。
+            
+            バンドで〇を担当してます。
+
+   ・実行クラスで引数[202603]、[山本]、[ギター]で生成し、
+     Student型の変数[s3]に代入。
+   ・[s3]のselfIntroductionメソッドを呼び出し。
+
+4. 以下のコードを記述しなさい。
+
+   ・Studentクラスに以下を追加。
+
+       ※Eclipse機能でフィールドnum、name、grade表示用の
+         toStringメソッドをオーバーライド。
+
+   ・実行クラスで[s1]をSystem.out.println()で表示。
+   ・同じく[s2]をSystem.out.println()で表示。
+   ・同じく[s3]をSystem.out.println()で表示。
+
+【1.～4.の出力例】
+Java大学1年、学籍番号202601、田中です。
+Java大学1年、学籍番号202602、藤田です。
+コンビニでバイトしてます。
+Java大学1年、学籍番号202603、山本です。
+バンドでギターを担当してます。
+Student [num=202601, name=田中, grade=1]
+Student [num=202602, name=藤田, grade=1]
+Student [num=202603, name=山本, grade=1]
+
