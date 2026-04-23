@@ -10,6 +10,12 @@ public class Phone1301 {
     /** 携帯電話のデータ通信量 */
     double data;
     String iro;
+    void show () {
+    	System.out.println("料金は" + fee + "円です。");
+		System.out.println("データ通信量は" + data + "GBです。");
+		System.out.println("携帯の色は" + iro + "です。");
+
+    }
 
 	
 }
