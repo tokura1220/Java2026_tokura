@@ -17,10 +17,11 @@ public class Main {
 
 		// 2
 		System.out.println("---席2の学生---");
-		
-		
+		Student s = school.getStudentBySeat(2);
+		school.showStudent(s);
 
 		// 3
+		school.showStudent();
 
 	}
 }

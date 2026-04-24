@@ -27,11 +27,20 @@ public class School {
 	
 	// 2
 	public Student getStudentBySeat(int seatNum) {
-		int seatNum = -1;
-		return seatNum;
-		
+		return students[seatNum-1];
 	}
+	public void showStudent(Student s) {
+		System.out.println("番号:" + s.getNum() + " 名前:" +s.getName());
+	}
+	
 
 	// 3
+	public void showStudent() {
+		System.out.println("---学生リスト---");
+	
+		for (int i=0; i<students.length;i++) {
+			showStudent(students[i]);
+		}
+	}
 
 }
