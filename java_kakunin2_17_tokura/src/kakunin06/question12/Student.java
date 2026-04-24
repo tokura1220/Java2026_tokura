@@ -23,5 +23,19 @@ public class Student {
 	}
 
 	// 2
+	public Student () {
+		this(-1,"なし");
+		
+	}
+	public Student(int num,String name) {
+		this.num = num;
+		this.name =name;
+		
+		System.out.print("【入学希望者】");
+		showStudent();
+	}
+	private void showStudent() {
+		System.out.println("番号:" + num + " 名前:" + name);
+	}
 
 }
