@@ -16,6 +16,9 @@ public class Main {
 		
 
 		// 2
+		System.out.println("---席2の学生---");
+		
+		
 
 		// 3
 

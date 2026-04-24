@@ -26,6 +26,11 @@ public class School {
 	}
 	
 	// 2
+	public Student getStudentBySeat(int seatNum) {
+		int seatNum = -1;
+		return seatNum;
+		
+	}
 
 	// 3
 
