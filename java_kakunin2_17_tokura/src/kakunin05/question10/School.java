@@ -14,6 +14,8 @@ public class School {
 	//メソッド1
 	private void showStudent(int index) {
 		s = students [index];
+		
+		System.out.println("席" + (index + 1) + " 番号:" +  + " 名前:" + );
 	}
 	
 	
