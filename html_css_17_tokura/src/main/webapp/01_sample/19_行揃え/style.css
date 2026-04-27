@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+.tal {
+	text-align: left;
+}
+.tac {
+	text-align: center;
+}
+.tar {
+	text-align: right;
+}
+
+/* ブロック要素の影響範囲を知るために背景色を付ける */
+h2, p{
+	background: #eca;
+}

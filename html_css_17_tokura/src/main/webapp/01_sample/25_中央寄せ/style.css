@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+.center {
+	width: 500px;
+	margin: 0 auto;
+	background: #ffa;
+	padding: 20px;
+}

@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.box {
+	margin: 10px;
+}
+
+h2 {
+	background: #963;
+	color: #fff;
+	margin: 0px;
+	padding: 10px;
+}
+
+p {
+	background: #cca;
+	margin: 0px;
+	padding: 10px;
+}

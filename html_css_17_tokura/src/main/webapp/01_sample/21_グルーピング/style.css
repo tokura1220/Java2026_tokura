@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.wrapper{
+	font-size: 120%;
+	background: #fee;
+}
+.marker{
+	background: #eaa;
+	font-weight: bold;
+}

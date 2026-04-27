@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<style>
+			#paragraphA,
+			#paragraphB,
+			#paragraphC{
+				background: #fcc;
+				padding: 10px;
+			}
+			#paragraphA{
+				margin-top: 50px;
+			}
+			#paragraphA + p,
+			#paragraphB + p,
+			#paragraphC + p{
+				margin-bottom: 500px;
+			}
+		</style>
+		<title>ページ内リンク</title>
+	</head>
+	<body>
+		<p><a href="#paragraphA">段落Aへ移動</a></p>
+		<p><a href="#paragraphB">段落Bへ移動</a></p>
+		<p><a href="#paragraphC">段落Cへ移動</a></p>
+		
+		<p id="paragraphA">段落A</p>
+		<p><a href="#">先頭へ移動</a></p>
+
+		<p id="paragraphB">段落B</p>
+		<p><a href="#">先頭へ移動</a></p>
+
+		<p id="paragraphC">段落C</p>
+		<p><a href="#">先頭へ移動</a></p>
+	</body>
+</html>

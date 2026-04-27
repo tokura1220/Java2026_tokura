@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+.f_small {
+	font-size: 10px;
+}
+
+.f_large {
+	font-size: 18px;
+}
+
+/*文字色を赤*/
+.fc_red {
+	color: #ff0000;
+}
+
+/*文字サイズを24px*/
+.fs24 {
+	font-size: 24px;
+}
+
+/*文字太字*/
+.b {
+	font-weight: bold;
+}

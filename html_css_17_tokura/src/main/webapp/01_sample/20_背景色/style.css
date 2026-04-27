@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.light_roast, .medium_roast, .dark_roast {
+	color: #fff;
+}
+
+.light_roast {
+	background: #b96;
+}
+
+.medium_roast {
+	background:no-repeat center url("coffee.png") #963;
+}
+
+.dark_roast {
+	background-color: #630;
+}
