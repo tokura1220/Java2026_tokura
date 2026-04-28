@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSSの演習課題</title>
+		<meta charset="UTF-8">
+		<style>
+			header {
+				width:500px;
+				height:100px;
+				background-color:#dc143c;
+			}
+			
+			.container {
+				display: flex;
+				flex-direction: row;
+			}
+
+			aside {
+				width:200px;
+				height:200px;
+				background-color:#ffd700;
+			}
+
+			article {
+				width:500px;
+				height:200px;
+				background-color:#4169e1;
+				display: flex;
+				flex-direction: row;
+				flex-wrap:wrap;
+			}
+			
+			.contents{
+				width:40%;
+				margin: 0px 10px 10px 0px;
+				background-color:#c0c0c0;
+			}
+
+			footer {
+				width:700px;
+				height:100px;
+				background-color:#90ee90;
+			}
+		</style>
+	</head>
+	<body>
+		<header>会社/サービス名のロゴや各ページへのリンクを主に設置します</header><!-- #header -->
+		<div class="container">
+			<article>
+				ページの本文記事を配置するメインの部分です
+				<div class="contents">コンテンツ</div>
+				<div class="contents">コンテンツ</div>
+				<div class="contents">コンテンツ</div>
+				<div class="contents">コンテンツ</div>
+			</article><!-- #article -->
+			<aside>同じカテゴリ内のページへ誘導するリンクやバナーを設置します</aside><!-- #aside -->
+		</div><!-- #container -->
+		<footer>コピーライトやサイトマップ、関連企業へのリンクなどを主に設置します</footer><!-- #footer -->
+	</body>
+</html>
