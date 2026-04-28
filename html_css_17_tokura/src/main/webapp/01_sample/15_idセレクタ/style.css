@@ -2,6 +2,6 @@
 
 #wrapper {
 	width: 600px;			/* ブロック要素の横幅を 600px に */
-	background-color: #fec;	/* 背景色を #ffeecc 色に */
+	background-color: lightblue;	/* 背景色を #ffeecc 色に */
 	padding: 10px;			/* 内側に 10px の余白を設ける */
 }
