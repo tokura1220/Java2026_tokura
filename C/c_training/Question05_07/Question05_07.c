@@ -7,7 +7,7 @@ int main(void)
 		printf("%d‚Ì’i",i);
 
 		for (int j = 1; j < 10; j++) {
-			printf("%4d ", i * j);
+			printf("%2d ", i * j);
 		}
 		printf("\n");
 	}
