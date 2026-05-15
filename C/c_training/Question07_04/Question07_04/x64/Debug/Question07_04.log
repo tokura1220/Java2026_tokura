@@ -1,0 +1,3 @@
+﻿  Question07_04.c
+C:\Users\user\Documents\教材\00\Java2026_tokura\C\c_training\Question07_04\Question07_04.c(12,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Question07_04.vcxproj -> C:\Users\user\Documents\教材\00\Java2026_tokura\C\c_training\Question07_04\x64\Debug\Question07_04.exe

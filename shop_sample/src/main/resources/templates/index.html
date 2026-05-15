@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+	<!--/* add 2章 ソースコード2-6 */-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--/* add 2章 ソースコード2-6 */-->
+<div>トップページ</div>
+    
+<!--/* add 5章 ソースコード5-4 */-->
+<div th:text="${session.userId}"></div>
+<a th:href="@{/loginOnSession}">ログイン</a>
+<a th:href="@{/logout}">ログアウト</a>
+
+<!--/* add 6章 ソースコード6-6 */-->
+<br>
+<a th:href="@{/items/findAll}">全件検索</a>
+<!--/* add 6章 ソースコード6-9 */-->
+<a th:href="@{/items/findAllByOrderByPriceDesc}">並び替え検索</a>
+<!--/* add 6章 ソースコード6-13 */-->
+<a th:href="@{/items/getReferenceById/1}">主キー検索(1)</a>
+<a th:href="@{/items/getReferenceById/3}">主キー検索(3)</a>
+<!--/* add 6章 ソースコード6-16 */-->
+<a th:href="@{/items/findByPrice/100}">価格検索(100)</a>
+<!--/* add 6章 ソースコード6-19 */-->
+<a th:href="@{/items/findByNameAndPrice/りんご/200}">
+名前と価格による検索(りんごかつ200)</a>
+<!--/* add 6章 ソースコード6-22 */-->
+<a th:href="@{/items/findByNameLike/ん}">曖昧検索(ん)</a>
+<!--/* add 6章 ソースコード6-30 */-->
+<br>
+<a th:href="@{/items/create/input}">登録</a>
+<!--/* add 6章 ソースコード6-33 */-->
+<br>
+<a th:href="@{/items/update/input/1}">更新(1)</a>
+<!--/* add 6章 ソースコード6-36 */-->
+<br>
+<a th:href="@{/items/delete/input}">削除</a>
+<!--/* add 7章 ソースコード7-7 */-->
+<br>
+<a th:href="@{/items/findItemAndCategory}">外部参照検索</a>
+<!--/* add 8章 ソースコード8-3 */-->
+<br>
+<a th:href="@{/items/searchWithNamedQuery/1}">NamedQueryによる検索</a>
+<!--/* add 8章 ソースコード8-6 */-->
+<br>
+<a th:href="@{/items/searchWithQuery/1}">Query による検索</a>
+     
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--/* add 4章 ソースコード4-2 */-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body> 
+    <div>ログイン</div> 
+    <form method="get" th:action="@{/doLogin}"> 
+      ユーザ ID:<input type="number" name="userId" /> 
+      パスワード:<input type="password" name="password" /> 
+      <input type="submit" value="GETによるログイン" /> 
+    </form> 
+<!--/* add 4章 ソースコード4-4 */-->
+    <form method="post" th:action="@{/doLogin}"> 
+      ユーザ ID:<input type="number" name="userId" /> 
+      パスワード:<input type="password" name="password" /> 
+      <input type="submit" value="Postによるログイン" /> 
+    </form> 
+</body> 
+</html>

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\\u6559\u6750\\00\\Java2026_tokura\\C\\c_training\\Question06_07\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F98F0C3D-0865-434C-966E-0F8D6297FF9F}|Question06_07.vcxproj|C:\\Users\\user\\Documents\\\u6559\u6750\\00\\Java2026_tokura\\C\\c_training\\Question06_07\\Question06_07.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F98F0C3D-0865-434C-966E-0F8D6297FF9F}|Question06_07.vcxproj|solutionrelative:Question06_07.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Question06_07.c",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\\u6559\u6750\\00\\Java2026_tokura\\C\\c_training\\Question06_07\\Question06_07.c",
+              "RelativeDocumentMoniker": "Question06_07.c",
+              "ToolTip": "C:\\Users\\user\\Documents\\\u6559\u6750\\00\\Java2026_tokura\\C\\c_training\\Question06_07\\Question06_07.c",
+              "RelativeToolTip": "Question06_07.c",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAC4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-05-13T06:19:34.684Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

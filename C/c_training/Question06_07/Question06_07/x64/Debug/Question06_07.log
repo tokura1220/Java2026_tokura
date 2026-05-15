@@ -1,0 +1,7 @@
+﻿  Question06_07.c
+C:\Users\user\Documents\教材\00\Java2026_tokura\C\c_training\Question06_07\Question06_07.c(22,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\user\Documents\教材\00\Java2026_tokura\C\c_training\Question06_07\Question06_07.c(26,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\user\Documents\教材\00\Java2026_tokura\C\c_training\Question06_07\Question06_07.c(30,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\user\Documents\教材\00\Java2026_tokura\C\c_training\Question06_07\Question06_07.c(34,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\user\Documents\教材\00\Java2026_tokura\C\c_training\Question06_07\Question06_07.c(38,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Question06_07.vcxproj -> C:\Users\user\Documents\教材\00\Java2026_tokura\C\c_training\Question06_07\x64\Debug\Question06_07.exe
