@@ -14,4 +14,5 @@ public class Practice0102Controller {
 		return "hello"; 
 		
 	}
+	
 }

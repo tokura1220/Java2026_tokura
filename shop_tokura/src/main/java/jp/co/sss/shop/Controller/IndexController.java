@@ -15,4 +15,15 @@ public class IndexController {
 		return "index"; 
 		
 	}
+	// 3章 ソースコード 3-1
+		@RequestMapping("/before")
+		public String before() {
+			return "before";
+		}
+
+		// 3章 ソースコード 3-1
+		@RequestMapping("/after")
+		public String after() {
+			return "after";
+		}
 }
