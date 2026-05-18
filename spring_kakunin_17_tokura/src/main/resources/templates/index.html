@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> 
+<html xmlns:th="https://www.thymeleaf.org"> 
 
 <head>
 	<meta charset="UTF-8">
@@ -8,8 +8,9 @@
 <body>
 <!--	確認演習1	-->
 <h1 id = "t">トップページ</h1>
-
 <a id = "a1" href="/kakunin/next">次のページへ</a>
+<!--/*	確認演習2	*/-->
+<p id = "p1" ><a th:href="@{/forwardPage2}">ページ2へ</a></p>
 
 
 </body>
