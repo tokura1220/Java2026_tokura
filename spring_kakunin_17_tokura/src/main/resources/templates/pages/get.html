@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 id = "t">入力ページ</h1>
+	
+	<form id ="f" th:action = "@{/post}" method="post">
+		<input type= "number" name="no">
+		<input type="submit" value="POSTメソッドでパラメータを送信">
+	</form>
+
+</body>
+</html>
