@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 id="t">リクエストの値を表示</h1>
+	<p id="p">文字列<b th:text="${data1}"></b>が入力されました。別の文字列を入力してください。</p>
+	
+	<form id="f" th:action = "@{/session}" method="post">
+		<input type="text" name="str2">
+		<input type="submit">
+	</form>
+
+</body>
+</html>

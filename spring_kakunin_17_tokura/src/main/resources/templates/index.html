@@ -16,6 +16,12 @@
 <!--/*	確認演習3	*/-->
 <p id = "p2"><a th:href="@{/get?no=111}">GETメソッドでパラメータを送信</a></p>
 
+<!--/*	確認演習4	*/-->
+<form id="f" th:action="@{/request}">
+	<input type="text" name=str1 />
+	<input type="submit" value="文字列を送信">
+</form>
+<p id="p3">セッションの値を表示:<b th:text="${session.data2}"></b></p>
 
 
 </body>
