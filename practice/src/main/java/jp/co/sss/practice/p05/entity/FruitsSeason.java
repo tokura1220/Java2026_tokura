@@ -15,32 +15,37 @@ public class FruitsSeason {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_fruit_gen")
 	@SequenceGenerator(name = "seq_fruit_gen", sequenceName = "seq_fruits_season", allocationSize = 1)
-	private Integer fruit_id;
+	private Integer fruitId;
 	@Column
-	private String fruit_name;
+	private String fruitName;
 	@Column
-	private Integer season_month;
+	private Integer seasonMonth;
 	
-	
-	public Integer getFruit_id() {
-		return fruit_id;
-	}
-	public void setFruit_id(Integer fruit_id) {
-		this.fruit_id = fruit_id;
-	}
-	public String getFruit_name() {
-		return fruit_name;
-	}
-	public void setFruit_name(String fruit_name) {
-		this.fruit_name = fruit_name;
-	}
-	public Integer getSeason_month() {
-		return season_month;
-	}
-	public void setSeason_month(Integer season_month) {
-		this.season_month = season_month;
+
+
+	public Integer getFruitId() {
+		return fruitId;
 	}
 
-	
+	public void setFruitId(Integer fruitId) {
+		this.fruitId = fruitId;
+	}
+
+	public String getFruitName() {
+		return fruitName;
+	}
+
+	public void setFruitName(String fruitName) {
+		this.fruitName = fruitName;
+	}
+
+	public Integer getSeasonMonth() {
+		return seasonMonth;
+	}
+
+	public void setSeasonMonth(Integer seasonMonth) {
+		this.seasonMonth = seasonMonth;
+	}
+
 
 }

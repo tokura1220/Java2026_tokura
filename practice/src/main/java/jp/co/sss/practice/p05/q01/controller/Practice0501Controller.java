@@ -15,9 +15,21 @@ public class Practice0501Controller {
     FruitsSeasonRepository repository;
     
     @RequestMapping(path="/fruits/list/all",method=RequestMethod.GET)
-    public String showItemList(Model model) {
+    public String showfruitList(Model model) {
+    	
     	model.addAttribute("fruits_season", repository.findAll());
     	return "practice05/01/fruits_list";
     }
+//    @GetMapping("/fruits/list/all")
+//	public String method1(Model model) {
+//		List<FruitsSeason> fruitsList = fruitsRepo.findAll();
+//		
+//		for (FruitsSeason fruit : fruitsList) {
+//			System.out.println(fruit);
+//		}
+//		
+//		model.addAttribute("fruitsList", fruitsList);
+//		return "practice05/01/fruits_list";
+//	}
 
 }
