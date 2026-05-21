@@ -18,5 +18,10 @@ public class ItemController {
 		model.addAttribute("items", repository.findAll());
 		return "items/item_list";
 	}
+	@RequestMapping("/items/findAllByOrderByPriceDesc")
+	public String showItemListByOrderByPriceDesc(Model model) {
+	model.addAttribute("items", repository. findAllByOrderByPriceDesc());
+	return "items/item_list";
+	}
 	
 }
